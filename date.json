@@ -12,7 +12,7 @@
   "nome":"Centro de Atenção Psicossocial",
   "descricao":"A rede municipal de saúde de São Paulo conta com 102 CAPS que oferecem avaliação e tratamento para sofrimento psíquico, incluindo autismo, com equipes multiprofissionais. O tratamento pode incluir atendimento individual e em grupo, oficinas terapêuticas e orientação familiar.",
   "contato":"A porta de entrada para o atendimento é a Unidade Básica de Saúde (UBS) mais próxima de sua residência.",
-  "endereco": " Existem unidades em diversas regiões, como Vila Maria, Mooca, Casa Verde e Penha. [1, 3, 4, 5] É necessário procurar a UBS para ser encaminhado ao CAPS da sua região.",
+  "endereco": " Existem unidades em diversas regiões, como Vila Maria, Mooca, Casa Verde e Penha. É necessário procurar a UBS para ser encaminhado ao CAPS da sua região.",
   "link" : "https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/index.php?p=204205",
   "lat": -23.5505,
   "lng": -46.6333
