@@ -1,0 +1,92 @@
+[
+  {"nome": "Centro TEA Paulista",
+  "descricao": "Acolhimento, orientação, atividades complementares, apoio emocional e encaminhamentos para a rede de saúde. Não oferece atendimento médico ou medicamentoso.",
+  "contato": "(11) 3116-7406",
+  "endereco": "Rua Galileo Emendabili, 99 - Jardim Humaitá, São Paulo - SP",
+  "link": "https://www.pessoacomdeficiencia.sp.gov.br/centro-tea-paulista/",
+  "lat": -23.5329,
+  "lng": -46.7331
+  },
+
+{ 
+  "nome":"Centro de Atenção Psicossocial",
+  "descricao":"A rede municipal de saúde de São Paulo conta com 102 CAPS que oferecem avaliação e tratamento para sofrimento psíquico, incluindo autismo, com equipes multiprofissionais. O tratamento pode incluir atendimento individual e em grupo, oficinas terapêuticas e orientação familiar.",
+  "contato":"A porta de entrada para o atendimento é a Unidade Básica de Saúde (UBS) mais próxima de sua residência.",
+  "endereco": " Existem unidades em diversas regiões, como Vila Maria, Mooca, Casa Verde e Penha. [1, 3, 4, 5] É necessário procurar a UBS para ser encaminhado ao CAPS da sua região.",
+  "link" : "https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/index.php?p=204205",
+  "lat": -23.5505,
+  "lng": -46.6333
+  }, 
+
+{
+  "nome":"AMA (Associação de Amigos do Autista)",
+  "descricao": "Oferece atendimento educacional e terapêutico 100% gratuito com uma equipe multidisciplinar, incluindo médicos, psicólogos, fonoaudiólogos, e mais.",
+  "contato": "(11) 3376-4400",
+  "endereco": "Possui várias unidades, como a do Setor Lavapés na Rua do Lavapés, 1123 - Cambuci, São Paulo, SP.",
+  "link": "https://www.ama.org.br/",
+  "lat": -23.5605,
+  "lng": -46.6220
+  },
+
+{
+  "nome": "Instituto Jô Clemente (antiga APAE de São Paulo)",
+  "descricao": "Pessoas com TEA têm direito ao atendimento gratuito na Inclusão Profissional, Longevidade e ao Atendimento Educacional Especializado (AEE), subsidiados pela Prefeitura de São Paulo.",
+  "contato": "É necessário verificar no site as formas de contato para cada serviço.",
+  "endereco": "Rua Loefgren, 2109 - Vila Clementino, São Paulo - SP.",
+  "link":"https://www.ijc.org.br/pt-br/Paginas/default.aspx",
+  "lat": -23.6025,
+  "lng": -46.6429
+  },
+
+{
+  "nome": "Centros Especializados em Reabilitação (CER)",
+  "descricao": "Oferecem diagnóstico e atendimento multiprofissional para pessoas com TEA, como parte da rede municipal de saúde. O trabalho envolve psicólogos, terapeutas ocupacionais, fonoaudiólogos e médicos.",
+  "contato": "O encaminhamento é feito através da Unidade Básica de Saúde (UBS) mais próxima.",
+  "endereco": "Diversas unidades na cidade de São Paulo. A UBS da sua região poderá informar o CER de referência.",
+  "link": "https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/index.php?p=204205",
+  "lat": -23.5489,
+  "lng": -46.6388
+  },
+
+{
+  "nome": "AUMA (Associação dos Amigos da Criança Autista)",
+  "descricao": "ONG que oferece apoio e serviços para crianças com autismo e suas famílias.",
+  "contato": "(11) 2950-4914 / (11) 3384-6180",
+  "endereco": "Rua César Zama, 257 - Santana, São Paulo - SP",
+  "link": "http://www.auma.org.br/",
+  "lat": -23.5049,
+  "lng": -46.6279
+  },
+
+{
+  "nome": "Instituto Spectra",
+  "descricao": "Organização não governamental que atende de forma gratuita pessoas neurodivergentes, com foco no Transtorno do Espectro Autista, na cidade de São Paulo.",
+  "contato": "Verificar formas de contato no site ou redes sociais da organização.",
+  "endereco": "Rua Colônia da Glória, 548 – Vila Mariana, São Paulo - SP.",
+  "link": "https://www.instagram.com/institutospectra/",
+  "lat": -23.5885,
+  "lng": -46.6364
+  },
+
+{
+  "nome": "Specialisterne Brasil",
+  "descricao": "ONG internacional com sede em São Paulo que oferece capacitação gratuita e inclusão de pessoas neurodivergentes, incluindo autistas, no mercado de trabalho.",
+  "contato": "O contato é feito através do site para inscrição nos programas de capacitação.",
+  "endereco": "Atuação em São Paulo e Rio de Janeiro, com treinamentos que podem ser online e presenciais.",
+  "link": "https://br.specialisterne.com/",
+  "lat": -23.5558,
+  "lng": -46.6625
+  },
+
+{
+  "nome": "Centro Municipal para Pessoas com TEA (Tatuapé)",
+  "descricao": "Primeiro centro municipal de São Paulo voltado para pessoas com TEA, oferecendo atendimento multidisciplinar para crianças a partir de seis anos, jovens, adultos e idosos. A gestão é feita pelo Instituto Lar Mãe do Divino Amor (LEMDA).",
+  "contato": "Informações sobre o início do funcionamento e formas de acesso devem ser consultadas nos canais da Prefeitura.",
+  "endereco": "Localizado no bairro do Tatuapé, em uma área próxima ao metrô.",
+  "link": "https://www.prefeitura.sp.gov.br/cidade/secretarias/pessoa_com_deficiencia/",
+  "lat": -23.5415,
+  "lng": -46.5771
+}
+
+]
+  

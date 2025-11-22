@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #7cc6f2; /* Azul TEA suave */
+    --secondary-color: #eaf3fb; /* Texto claro */
+    --tertiary-color: #b7c9d9;
+    --bg-color: #1f2833; /* Fundo azulado escuro */
+    --card-bg-color: rgba(255, 255, 255, 0.08);
+    --card-border-color: rgba(124, 198, 242, 0.4);
+}
+
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url('https://cdn.sistemawbuy.com.br/arquivos/1496828167759de8828fb2a105718f71/blogitens/design-sem-nome-18-668ec1fe04d9d1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+    padding: 1.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(31, 40, 51, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    border-bottom: 1px solid rgba(124, 198, 242, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+/* INPUT */
+div input {
+    padding: 0.7rem 1rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--tertiary-color);
+    background: rgba(255, 255, 255, 0.07);
+    width: 30rem;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    transition: 0.2s;
+}
+
+div input::placeholder {
+    color: var(--tertiary-color);
+}
+
+div input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(124, 198, 242, 0.4);
+}
+
+/* BOTÃO */
+#botao-busca {
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: #0b1a25;
+    transition: 0.2s;
+}
+
+#botao-busca:hover {
+    background-color: #99ddff;
+}
+
+/* MAIN */
+main {
+    max-width: 80rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* CARDS */
+article {
+    background-color: var(--card-bg-color);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--card-border-color);
+    transition: 0.25s;
+}
+
+article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+article h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* RODAPÉ — corrigido (NÃO ABSOLUTO) */
+.footer {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: rgba(31, 40, 51, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--tertiary-color);
+    text-align: center;
+    border-top: 1px solid rgba(124, 198, 242, 0.2);
+    margin-top: 3rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    div input {
+        width: 90vw;
+    }
+}
