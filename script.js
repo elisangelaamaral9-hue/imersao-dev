@@ -1,75 +1,91 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector(".card-container");
-    const searchInput = document.getElementById('searchInput');
-    let todosOsDados = []; // Variável para armazenar todos os dados carregados
+const dados = [
+  {
+    nome: "Centro de Referência em Autismo",
+    descricao: "Atendimento especializado e orientação para famílias de pessoas com TEA.",
+    endereco: "São Paulo - SP",
+    contato: "Consulte a unidade responsável",
+    link: "#",
+    latitude: -23.55052,
+    longitude: -46.633308
+  },
+  {
+    nome: "CAPS Infantil",
+    descricao: "Serviço público de atenção psicossocial voltado ao atendimento infantil e familiar.",
+    endereco: "Diversas regiões de São Paulo",
+    contato: "Procure a unidade CAPS Infantil mais próxima",
+    link: "#",
+    latitude: -23.561684,
+    longitude: -46.655981
+  },
+  {
+    nome: "UBS - Unidade Básica de Saúde",
+    descricao: "Porta de entrada para encaminhamentos, avaliações e acompanhamento pelo SUS.",
+    endereco: "São Paulo - SP",
+    contato: "Atendimento pelo SUS",
+    link: "#",
+    latitude: -23.532905,
+    longitude: -46.63952
+  }
+];
 
-    // Inicializa o mapa e define sua visão inicial para as coordenadas de São Paulo
-    const map = L.map('map').setView([-23.55052, -46.633308], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+const cardsContainer = document.getElementById("cardsContainer");
+const searchInput = document.getElementById("searchInput");
 
-    // Cria uma camada de grupo para os marcadores, que será limpa a cada busca
-    const markerGroup = L.layerGroup().addTo(map);
+function criarCards(lista) {
+  cardsContainer.innerHTML = "";
 
-    async function IniciarBusca() {
-        try {
-            const resposta = await fetch("date.json");
-            if (!resposta.ok) {
-                throw new Error(`Erro ao buscar dados: ${resposta.statusText}`);
-            }
-            const dados = await resposta.json();
-            todosOsDados = dados; // Armazena os dados na variável
-            renderizarConteudo(todosOsDados); // Renderiza todos os dados inicialmente
-        } catch (error) {
-            console.error("Não foi possível carregar os dados:", error);
-        }
-    }
+  if (lista.length === 0) {
+    cardsContainer.innerHTML = `
+      <div class="no-results">
+        Nenhum resultado encontrado. Tente buscar por outro termo.
+      </div>
+    `;
+    return;
+  }
 
-    function renderizarConteudo(dados) {
-        container.innerHTML = ''; // Limpa o container antes de adicionar novos cards
-        markerGroup.clearLayers(); // Limpa todos os marcadores antigos do mapa
+  lista.forEach(item => {
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-        // Verifica se a busca não retornou resultados
-        if (dados.length === 0) {
-            const noResultsMessage = document.createElement('p');
-            noResultsMessage.textContent = 'Nenhum resultado encontrado.';
-            noResultsMessage.classList.add('no-results-message');
-            container.appendChild(noResultsMessage);
-            return; // Encerra a função aqui, pois não há cards para renderizar
-        }
+    card.innerHTML = `
+      <h3>${item.nome}</h3>
+      <p><strong>Descrição:</strong> ${item.descricao}</p>
+      <p><strong>Endereço:</strong> ${item.endereco}</p>
+      <p><strong>Contato:</strong> ${item.contato}</p>
+      <a href="${item.link}" target="_blank">Saiba mais</a>
+    `;
 
-        for (const dado of dados) {
-            // Renderiza o card
-            const article = document.createElement("article");
-            article.classList.add("card");
-            article.innerHTML = `
-                <h2>${dado.nome}</h2>
-                <p>${dado.descricao}</p>
-                <p><b>Contato:</b> ${dado.contato}</p>
-                <p><b>Endereço:</b> ${dado.endereco}</p>
-                <a href="${dado.link}" target="_blank">Saiba mais</a>
-            `;
-            container.appendChild(article);
+    cardsContainer.appendChild(card);
+  });
+}
 
-            // Adiciona o marcador no mapa, se tiver coordenadas
-            if (dado.lat && dado.lng) {
-                L.marker([dado.lat, dado.lng]).addTo(markerGroup)
-                    .bindPopup(`<b>${dado.nome}</b><br>${dado.endereco}`);
-            }
-        }
-    }
+searchInput.addEventListener("input", () => {
+  const termo = searchInput.value.toLowerCase();
 
-    // Adiciona o evento de 'input' para o campo de busca
-    searchInput.addEventListener('input', () => {
-        const termoBusca = searchInput.value.toLowerCase();
-        const dadosFiltrados = todosOsDados.filter(dado =>
-            dado.nome.toLowerCase().includes(termoBusca) ||
-            dado.descricao.toLowerCase().includes(termoBusca) ||
-            dado.endereco.toLowerCase().includes(termoBusca)
-        );
-        renderizarConteudo(dadosFiltrados);
-    });
+  const filtrados = dados.filter(item =>
+    item.nome.toLowerCase().includes(termo) ||
+    item.descricao.toLowerCase().includes(termo) ||
+    item.endereco.toLowerCase().includes(termo) ||
+    item.contato.toLowerCase().includes(termo)
+  );
 
-    IniciarBusca();
+  criarCards(filtrados);
+});
+
+criarCards(dados);
+
+const map = L.map("map").setView([-23.55052, -46.633308], 11);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap"
+}).addTo(map);
+
+dados.forEach(item => {
+  L.marker([item.latitude, item.longitude])
+    .addTo(map)
+    .bindPopup(`
+      <strong>${item.nome}</strong><br>
+      ${item.endereco}<br>
+      ${item.descricao}
+    `);
 });
