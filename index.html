@@ -3,96 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TEA Apoio SP</title>
+
+  <title>TEA Apoio SP | Base de Conhecimento</title>
 
   <link rel="stylesheet" href="style.css" />
-
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet/dist/leaflet.css"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
 <body>
-  <header class="hero-puzzle">
+  <header class="hero">
     <nav class="navbar">
-      <div class="logo">
-        <span class="puzzle-icon">🧩</span>
-        <strong>TEA Apoio SP</strong>
+      <div class="brand">
+        <div class="brand-icon">🧩</div>
+        <div>
+          <strong>TEA Apoio SP</strong>
+          <span>Base de conhecimento</span>
+        </div>
       </div>
 
-      <a href="#servicos" class="nav-button">Encontrar atendimento</a>
+      <div class="nav-actions">
+        <a href="#buscar">Buscar</a>
+        <a href="#mapa">Mapa</a>
+        <button id="themeToggle" type="button">🌙</button>
+      </div>
     </nav>
 
     <section class="hero-content">
-      <div class="puzzle-animation">
-        <span class="piece piece-1">🧩</span>
-        <span class="piece piece-2">🧩</span>
-        <span class="piece piece-3">🧩</span>
-        <span class="piece piece-4">🧩</span>
+      <div class="puzzle-loader">
+        <span>🧩</span>
+        <span>🧩</span>
+        <span>🧩</span>
+        <span>🧩</span>
       </div>
 
-      <p class="hero-tag">Base de conhecimento gratuita</p>
+      <p class="eyebrow">Informação gratuita, acessível e acolhedora</p>
 
-      <h1>Informação, acolhimento e caminhos para o cuidado no TEA</h1>
+      <h1>Encontre caminhos de cuidado para pessoas com TEA</h1>
 
-      <p class="hero-description">
-        Encontre serviços gratuitos, instituições de apoio e locais de atendimento para pessoas com Transtorno do Espectro Autista em São Paulo.
+      <p class="hero-text">
+        Uma base de conhecimento para localizar serviços gratuitos, instituições de apoio,
+        orientações e atendimentos voltados ao Transtorno do Espectro Autista em São Paulo.
       </p>
 
-      <div class="hero-actions">
-        <a href="#servicos" class="primary-button">Buscar atendimento</a>
-        <a href="#mapa" class="secondary-button">Ver no mapa</a>
+      <div class="hero-search">
+        <span>🔎</span>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Busque por instituição, bairro, serviço ou especialidade..."
+        />
+      </div>
+
+      <div class="quick-tags">
+        <button data-filter="SUS">SUS</button>
+        <button data-filter="psicologia">Psicologia</button>
+        <button data-filter="fono">Fono</button>
+        <button data-filter="terapia">Terapia</button>
+        <button data-filter="autismo">Autismo</button>
       </div>
     </section>
   </header>
 
   <main>
-    <section class="info-section">
-      <div class="info-card">
-        <span>🔎</span>
-        <h2>Pesquise com facilidade</h2>
-        <p>Busque por instituição, bairro, serviço ou tipo de atendimento.</p>
-      </div>
+    <section class="stats">
+      <article>
+        <strong id="totalInstituicoes">0</strong>
+        <span>instituições</span>
+      </article>
 
-      <div class="info-card">
-        <span>📍</span>
-        <h2>Veja no mapa</h2>
-        <p>Localize serviços de apoio gratuitos disponíveis em São Paulo.</p>
-      </div>
+      <article>
+        <strong>SP</strong>
+        <span>São Paulo</span>
+      </article>
 
-      <div class="info-card">
+      <article>
+        <strong>100%</strong>
+        <span>gratuito</span>
+      </article>
+    </section>
+
+    <section class="about">
+      <article>
         <span>💙</span>
-        <h2>Apoio às famílias</h2>
-        <p>Informações organizadas para facilitar o acesso ao cuidado.</p>
+        <h2>Acolhimento</h2>
+        <p>Conteúdo pensado para famílias, cuidadores e pessoas que buscam apoio.</p>
+      </article>
+
+      <article>
+        <span>📍</span>
+        <h2>Localização</h2>
+        <p>Visualize instituições e serviços disponíveis no mapa interativo.</p>
+      </article>
+
+      <article>
+        <span>🔎</span>
+        <h2>Busca simples</h2>
+        <p>Filtre rapidamente por nome, endereço, atendimento ou palavra-chave.</p>
+      </article>
+    </section>
+
+    <section id="buscar" class="content-grid">
+      <div class="results-panel">
+        <div class="section-title">
+          <div>
+            <p>Resultados</p>
+            <h2>Instituições encontradas</h2>
+          </div>
+
+          <span id="resultCount">0 resultados</span>
+        </div>
+
+        <div id="cardsContainer" class="cards-container"></div>
       </div>
-    </section>
 
-    <section id="servicos" class="search-section">
-      <h2>Buscar serviços</h2>
-      <p>Digite abaixo para encontrar instituições e atendimentos disponíveis.</p>
+      <aside id="mapa" class="map-panel">
+        <div class="section-title">
+          <div>
+            <p>Mapa</p>
+            <h2>Atendimentos em SP</h2>
+          </div>
+        </div>
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Ex: autismo, terapia, zona norte, atendimento..."
-      />
-    </section>
-
-    <section class="results-section">
-      <h2>Instituições encontradas</h2>
-      <div id="cardsContainer" class="cards-container"></div>
-    </section>
-
-    <section id="mapa" class="map-section">
-      <h2>Mapa de atendimentos</h2>
-      <div id="map"></div>
+        <div id="map"></div>
+      </aside>
     </section>
   </main>
 
   <footer>
+    <strong>TEA Apoio SP</strong>
     <p>Projeto desenvolvido por Elisangela Amaral</p>
-    <p>Base de conhecimento sobre TEA em São Paulo</p>
   </footer>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
