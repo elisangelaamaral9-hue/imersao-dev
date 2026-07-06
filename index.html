@@ -3,80 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tratamentos Gratuitos para TEA em São Paulo</title>
+  <title>TEA Apoio SP</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
 </head>
 
 <body>
-  <header class="hero">
+  <header class="hero-puzzle">
     <nav class="navbar">
-      <h1>TEA Apoio SP</h1>
-      <span>Base de conhecimento</span>
+      <div class="logo">
+        <span class="puzzle-icon">🧩</span>
+        <strong>TEA Apoio SP</strong>
+      </div>
+
+      <a href="#servicos" class="nav-button">Encontrar atendimento</a>
     </nav>
 
     <section class="hero-content">
-      <p class="tag">Informação acessível para famílias e cuidadores</p>
+      <div class="puzzle-animation">
+        <span class="piece piece-1">🧩</span>
+        <span class="piece piece-2">🧩</span>
+        <span class="piece piece-3">🧩</span>
+        <span class="piece piece-4">🧩</span>
+      </div>
 
-      <h2>Tratamentos gratuitos para TEA em São Paulo</h2>
+      <p class="hero-tag">Base de conhecimento gratuita</p>
 
-      <p>
-        Encontre instituições, serviços, centros de apoio e contatos úteis para pessoas com Transtorno do Espectro Autista.
+      <h1>Informação, acolhimento e caminhos para o cuidado no TEA</h1>
+
+      <p class="hero-description">
+        Encontre serviços gratuitos, instituições de apoio e locais de atendimento para pessoas com Transtorno do Espectro Autista em São Paulo.
       </p>
 
-      <div class="search-box">
-        <input 
-          type="text" 
-          id="searchInput" 
-          placeholder="Busque por instituição, bairro ou atendimento..." 
-        />
+      <div class="hero-actions">
+        <a href="#servicos" class="primary-button">Buscar atendimento</a>
+        <a href="#mapa" class="secondary-button">Ver no mapa</a>
       </div>
     </section>
   </header>
 
   <main>
-    <section class="intro">
-      <div>
-        <h3>Como usar?</h3>
-        <p>
-          Digite uma palavra-chave no campo de busca para filtrar os serviços disponíveis.
-        </p>
+    <section class="info-section">
+      <div class="info-card">
+        <span>🔎</span>
+        <h2>Pesquise com facilidade</h2>
+        <p>Busque por instituição, bairro, serviço ou tipo de atendimento.</p>
       </div>
 
-      <div>
-        <h3>Objetivo</h3>
-        <p>
-          Facilitar o acesso a informações confiáveis de atendimento gratuito para TEA.
-        </p>
+      <div class="info-card">
+        <span>📍</span>
+        <h2>Veja no mapa</h2>
+        <p>Localize serviços de apoio gratuitos disponíveis em São Paulo.</p>
       </div>
 
-      <div>
-        <h3>Localização</h3>
-        <p>
-          Veja os endereços no mapa e encontre serviços próximos.
-        </p>
+      <div class="info-card">
+        <span>💙</span>
+        <h2>Apoio às famílias</h2>
+        <p>Informações organizadas para facilitar o acesso ao cuidado.</p>
       </div>
     </section>
 
-    <section class="map-section">
-      <h3>Mapa de atendimentos</h3>
+    <section id="servicos" class="search-section">
+      <h2>Buscar serviços</h2>
+      <p>Digite abaixo para encontrar instituições e atendimentos disponíveis.</p>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Ex: autismo, terapia, zona norte, atendimento..."
+      />
+    </section>
+
+    <section class="results-section">
+      <h2>Instituições encontradas</h2>
+      <div id="cardsContainer" class="cards-container"></div>
+    </section>
+
+    <section id="mapa" class="map-section">
+      <h2>Mapa de atendimentos</h2>
       <div id="map"></div>
-    </section>
-
-    <section class="results">
-      <h3>Instituições encontradas</h3>
-      <div class="card-container"></div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <p>Projeto desenvolvido por Elisangela Amaral</p>
-
-    <ul class="footer-links">
-      <li><a href="https://github.com/elisangelaamaral9-hue" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/elisangela-amaral" target="_blank">LinkedIn</a></li>
-    </ul>
+    <p>Base de conhecimento sobre TEA em São Paulo</p>
   </footer>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
