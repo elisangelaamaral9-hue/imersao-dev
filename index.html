@@ -102,39 +102,55 @@
       </article>
     </section>
 
-    <section id="buscar" class="content-grid">
-      <div class="results-panel">
-        <div class="section-title">
-          <div>
-            <p>Resultados</p>
-            <h2>Instituições encontradas</h2>
-          </div>
+   <section id="faq" class="container section">
+  <div class="section-head reveal">
+    <div>
+      <small>Dúvidas comuns</small>
+      <h2>Perguntas Frequentes</h2>
+    </div>
+  </div>
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Como faço para conseguir atendimento?</summary>
+      <p>Use a busca, filtre por categoria e veja as instituições mais próximas. Depois, entre em contato pelo telefone ou e-mail informado.</p>
+    </details>
+    <details class="faq-item">
+      <summary>As instituições são gratuitas?</summary>
+      <p>A página prioriza serviços gratuitos ou de baixo custo. Sempre recomendamos confirmar as condições diretamente com cada instituição.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Como sugerir uma instituição?</summary>
+      <p>Você pode usar a área de cadastro ou a sugestão rápida no final da página para enviar nome, localização e informações iniciais.</p>
+    </details>
+  </div>
+</section>
 
-          <span id="resultCount">0 resultados</span>
-        </div>
-
-        <div id="cardsContainer" class="cards-container"></div>
+<section id="buscar" class="content-grid">
+  <div class="results-panel">
+    <div class="section-title">
+      <div>
+        <p>Resultados</p>
+        <h2>Instituições encontradas</h2>
       </div>
+      <span id="resultCount">0 resultados</span>
+    </div>
 
-      <aside id="mapa" class="map-panel">
-        <div class="section-title">
-          <div>
-            <p>Mapa</p>
-            <h2>Atendimentos em SP</h2>
-          </div>
-        </div>
+    <div id="cardsContainer" class="cards-container"></div>
+  </div>
 
-        <div id="map"></div>
-      </aside>
-    </section>
-  </main>
+  <aside id="mapa" class="map-panel">
+    <div class="section-title">
+      <div>
+        <p>Mapa</p>
+        <h2>Atendimentos em SP</h2>
+      </div>
+    </div>
 
-  <footer>
-    <strong>TEA Apoio SP</strong>
-    <p>Projeto desenvolvido por Elisangela Amaral</p>
-  </footer>
+    <div id="map"></div>
+  </aside>
+</section>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+<footer>
+  <strong>TEA Apoio SP</strong>
+  <p>Projeto desenvolvido por Elisangela Amaral</p>
+</footer>
